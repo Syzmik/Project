@@ -10,7 +10,7 @@ print( "Hello,", Name )
 
 open( Name, 'a')
     
-options = ['add', 'edit' ,'complete', 'list', 'exit']
+options = ['add' ,'complete', 'list', 'exit']
 while True :
     user_input = ' '
 
@@ -37,7 +37,7 @@ while True :
         print ("Text to search for:")
         textToSearch = input( "> " )
         print ("Press Enter to complete the task and remove it from the list.")
-        textToReplace = input( "> ","done")
+        textToReplace = input( "> ")
         print ("File to perform Search-Replace on:")
         fileToSearch  = (Name)
         tempFile = open( fileToSearch, 'r+' )
@@ -49,8 +49,15 @@ while True :
             tempFile.write( line.replace( textToSearch, textToReplace ) )
             tempFile.close()
             input( '\n\n Press Enter to exit...' )
+
     ##Needs to be fixed, requires two spaces to execute list command.##
     if user_input == "list":
+        filepath = Name
+        with open(filepath) as fp:
+            num_lines = sum(1 for line in fp if line.rstrip())
+            line = fp.readline()
+            cnt = 1
+            print('Total Tasks', num_lines)
         filepath = Name
         with open(filepath) as fp:
             line = fp.readline()
@@ -59,7 +66,7 @@ while True :
                 print("Line {}: {}".format(cnt, line.strip()))
                 line = fp.readline()
                 cnt += 1
-        
+                    
     if user_input == "exit":
-        quit()
+                quit()
         
