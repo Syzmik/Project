@@ -32,7 +32,7 @@ while True :
         fd.write(input())
         fd.write("\n")
         fd.close()
-
+## In progress##
     if user_input == "complete":
         print ("Text to search for:")
         textToSearch = input( "> " )
@@ -46,6 +46,7 @@ while True :
                 print('Match Found')
         else:
             print('Match Not Found!!')
+            ## Create temp to append the replace and add the date then put to tempfile.write##
             tempFile.write( line.replace( textToSearch, textToReplace ) )
             tempFile.close()
             input( '\n\n Press Enter to exit...' )
