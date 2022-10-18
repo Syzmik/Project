@@ -10,7 +10,7 @@ print( "Hello,", Name )
 
 open( Name, 'a')
     
-options = ['add', 'edit' ,'remove', 'list', 'exit']
+options = ['add', 'edit' ,'complete', 'list', 'exit']
 while True :
     user_input = ' '
 
@@ -32,11 +32,11 @@ while True :
         fd.write(input())
         fd.write("\n")
 
-    if user_input == "remove":
+    if user_input == "complete":
         print ("Text to search for:")
         textToSearch = input( "> " )
-        print ("Press Enter to confirm and delete the text.")
-        textToReplace = input( "> " )
+        print ("Press Enter to complete the task and remove it from the list.")
+        textToReplace = input( "> ","done")
         print ("File to perform Search-Replace on:")
         fileToSearch  = (Name)
         tempFile = open( fileToSearch, 'r+' )

@@ -1,0 +1,97 @@
+if user_input == "list"
+filepath = 'Name'
+with open(filepath) as fp:
+   line = fp.readline()
+   cnt = 1
+   while line:
+       print("Line {}: {}".format(cnt, line.strip()))
+       line = fp.readline()
+       cnt += 1
+       
+if user_input == "complete":
+    print("Type task to be added")
+    print ("Text to search for:")
+textToSearch = input( "> " )
+
+print ("Text to replace it with:")
+textToReplace = input( "> " )
+
+print ("File to perform Search-Replace on:")
+fileToSearch  = input( "> " )
+#fileToSearch = 'D:\dummy1.txt'
+
+tempFile = open( fileToSearch, 'r+' )
+
+for line in fileinput.input( fileToSearch ):
+    if textToSearch in line :
+        print('Match Found')
+    else:
+        print('Match Not Found!!')
+    tempFile.write( line.replace( textToSearch, textToReplace ) )
+tempFile.close()
+
+
+input( '\n\n Press Enter to exit...' )
+    
+    ----NOT TESTED----
+    
+if user_input == "edit":
+    print ("Text to search for:")
+textToSearch = input( "> " )
+
+print ("Text to replace it with:")
+textToReplace = input( "> " )
+
+print ("File to perform Search-Replace on:")
+fileToSearch  = input( "> " )
+#fileToSearch = 'D:\dummy1.txt'
+
+tempFile = open( fileToSearch, 'r+' )
+
+for line in fileinput.input( fileToSearch ):
+    if textToSearch in line :
+        print('Match Found')
+    else:
+        print('Match Not Found!!')
+    tempFile.write( line.replace( textToSearch, textToReplace ) )
+tempFile.close()
+
+
+input( '\n\n Press Enter to exit...' )
+    
+    
+    ---NOT TESTED---
+if user_input == "remove":
+    print ("Text to search for:")
+textToSearch = input( "> " )
+
+print ("Press Enter to confirm and delete the text.")
+textToReplace = input( "> " )
+
+print ("File to perform Search-Replace on:")
+fileToSearch  = "Name")
+#fileToSearch = 'D:\dummy1.txt'
+
+tempFile = open( fileToSearch, 'r+' )
+
+for line in fileinput.input( fileToSearch ):
+    if textToSearch in line :
+        print('Match Found')
+
+
+input( '\n\n Press Enter to exit...' )
+
+
+
+
+
+
+
+
+
+def strike(text):
+    result = ''
+    for c in text:
+        result = result + c + '\u0336'
+    return result
+    

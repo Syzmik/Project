@@ -1,0 +1,5 @@
+import sys
+
+print( "Enter user name", sys.argv[0])
+
+print( "Hello, "str(sys.argv[0])
