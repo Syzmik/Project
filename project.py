@@ -31,6 +31,7 @@ while True :
         fd = open(Name,"a")
         fd.write(input())
         fd.write("\n")
+        fd.close()
 
     if user_input == "complete":
         print ("Text to search for:")
