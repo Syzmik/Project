@@ -10,7 +10,7 @@ print( "Hello,", Name )
 
 open( Name, 'a')
     
-options = ['add', 'complete', 'edit' ,'remove', 'list', 'exit']
+options = ['add', 'edit' ,'remove', 'list', 'exit']
 while True :
     user_input = ' '
 
@@ -48,24 +48,6 @@ while True :
             tempFile.write( line.replace( textToSearch, textToReplace ) )
             tempFile.close()
             input( '\n\n Press Enter to exit...' )
-
-
-    if user_input == "complete":
-           print ("Task to Complete:")
-           from datetime import datetime
-           now = datetime.now()
-           dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-           taskToComplete= input( "> " )
-           CompletedTask = "Done "
-           fileToSearch  = Name
-    #fileToSearch = 'D:\dummy1.txt
-    tempFile = open( Name, 'r+' )
-    for line in fileinput.input( fileToSearch ):
-            if taskToComplete in line :
-                tempFile.write(taskToComplete,_,CompletedTask, _, dt_string)
-                
-    tempFile.close()
-  
     ##Needs to be fixed, requires two spaces to execute list command.##
     if user_input == "list":
         filepath = Name
