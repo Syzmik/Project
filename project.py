@@ -40,16 +40,17 @@ while True :
         print ("Text to search for:")
         textToSearch = input( "> " )
         print ("Press Enter to complete the task and remove it from the list.")
-        textToReplace = ("Task Complete")
+        textToReplace = input( "" )
+
         fileToSearch  = (Name)
+
         tempFile = open( fileToSearch, 'r+' )
         for line in fileinput.input( fileToSearch ):
             if textToSearch in line :
-                
                 print('Task Completed')
             else:
                 print('Task not found!!')
-        tempFile.write( line.replace( textToSearch, textToReplace ) )
+            tempFile.write( line.replace( textToSearch, textToReplace ) )
         tempFile.close()
 
     ##Needs to be fixed, requires two spaces to execute list command.##
