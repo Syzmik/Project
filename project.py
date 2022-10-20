@@ -1,7 +1,8 @@
-import sys
-import os
 import fileinput
+import os
+import sys
 from datetime import date
+
 today = date.today()
 print( "Enter user name:")
 Name = input()
@@ -34,22 +35,22 @@ while True :
         fd.close()
 ## In progress##
     if user_input == "complete":
+        from datetime import date
+        today = date.today()
         print ("Text to search for:")
         textToSearch = input( "> " )
         print ("Press Enter to complete the task and remove it from the list.")
-        textToReplace = input( "> ")
-        print ("File to perform Search-Replace on:")
+        textToReplace = ("Task Complete")
         fileToSearch  = (Name)
         tempFile = open( fileToSearch, 'r+' )
         for line in fileinput.input( fileToSearch ):
             if textToSearch in line :
-                print('Match Found')
-        else:
-            print('Match Not Found!!')
-            ## Create temp to append the replace and add the date then put to tempfile.write##
-            tempFile.write( line.replace( textToSearch, textToReplace ) )
-            tempFile.close()
-            input( '\n\n Press Enter to exit...' )
+                
+                print('Task Completed')
+            else:
+                print('Task not found!!')
+        tempFile.write( line.replace( textToSearch, textToReplace ) )
+        tempFile.close()
 
     ##Needs to be fixed, requires two spaces to execute list command.##
     if user_input == "list":
@@ -64,7 +65,7 @@ while True :
             line = fp.readline()
             cnt = 1
             while line:
-                print("Line {}: {}".format(cnt, line.strip()))
+                print("Task {}: {}".format(cnt, line.strip()))
                 line = fp.readline()
                 cnt += 1
                     
